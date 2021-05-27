@@ -1,0 +1,15 @@
+.cover {
+  max-width: fit-content;
+}
+
+.cover-caption {
+  background-color: rgb(49, 148, 206);
+  color: white;
+  margin: 0;
+  text-align: center;
+  padding: 0.7em 0;
+}
+
+a {
+  text-decoration: none;
+}
