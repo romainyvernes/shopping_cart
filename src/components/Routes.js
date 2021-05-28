@@ -3,7 +3,7 @@ import { Switch, Route } from 'react-router-dom';
 import Store from './Store';
 import Cart from './Cart';
 import Home from './Home';
-import Cover from './Cover';
+import Details from './Details';
 
 const Routes = (props) => {
   const { 
@@ -27,7 +27,7 @@ const Routes = (props) => {
       )} 
       />
       <Route path='/shop/:type/:id' render={(props) => (
-        <Cover 
+        <Details 
           {...props} 
           addToCart={addToCart} 
           cart={cart} 

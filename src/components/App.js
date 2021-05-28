@@ -41,7 +41,7 @@ const App = () => {
       if (String(releases[i].id) === e.currentTarget.id) {
         setCart(cart.concat({
           count: 1,
-          coverUrl: `https://image.tmdb.org/t/p/w300${releases[i].poster_path}`,
+          poster_path: releases[i].poster_path,
           id: releases[i].id,
         }));
         return;
