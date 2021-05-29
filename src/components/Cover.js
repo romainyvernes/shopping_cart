@@ -1,4 +1,5 @@
 import React from 'react';
+import '../styles/Cover.css';
 
 const Cover = (props) => {
   const { path, name } = props;

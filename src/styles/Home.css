@@ -1,0 +1,33 @@
+.home {
+  padding: 1em 2em;
+}
+
+.home h2 {
+  text-align: left;
+  margin: 1em 0 1.5em 0.3em;
+  background-color: rgb(20, 80, 150);
+  max-width: fit-content;
+  padding: 0.5em;
+  border-radius: 5px;
+  font-size: 1.2em;
+}
+
+.home h2 a {
+  color: white;
+}
+
+.release-wrapper {
+  background-color: rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  padding: 0.5em 1.5em 1.5em 1.5em;
+  margin: 1.5em 0;
+}
+
+.release-subwrapper {
+  display: flex;
+  overflow: auto;
+}
+
+.release-subwrapper a {
+  margin: 0 1.5em;
+}

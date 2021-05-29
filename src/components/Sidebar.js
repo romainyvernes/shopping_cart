@@ -1,12 +1,19 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
+import '../styles/Sidebar.css';
 
 const Sidebar = () => {
   return (
     <div className='sidebar'>
-      <h2><Link to='/shop/all'>All releases</Link></h2>
-      <h2><Link to='/shop/movies'>Movies</Link></h2>
-      <h2><Link to='/shop/tv'>TV Shows</Link></h2>
+      <h2>
+        <NavLink to='/shop/all' activeClassName='selected'>All releases</NavLink>
+      </h2>
+      <h2>
+        <NavLink to='/shop/movies' activeClassName='selected'>Movies</NavLink>
+      </h2>
+      <h2>
+        <NavLink to='/shop/tv' activeClassName='selected'>TV shows</NavLink>
+      </h2>
     </div>
   );
 };

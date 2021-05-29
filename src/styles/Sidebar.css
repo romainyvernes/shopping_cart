@@ -1,0 +1,21 @@
+.sidebar {
+  text-align: left;
+  min-width: 200px;
+  padding-left: 2.5em;
+  background-color: rgba(0, 0, 0, 0.1);
+  min-height: 100%;
+}
+
+.sidebar h2 {
+  margin: 1.5em 0;
+}
+
+.sidebar a {
+  transition: 0.2s;
+}
+
+.sidebar .selected {
+  font-style: italic;
+  padding-left: 0.5em;
+  color: rgb(20, 80, 150);
+}

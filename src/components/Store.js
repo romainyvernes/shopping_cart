@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import Sidebar from './Sidebar';
 import Cover from './Cover';
+import '../styles/Store.css';
 
 const Store = (props) => {
   const { type } = props.match.params;
@@ -33,18 +34,23 @@ const Store = (props) => {
   }, [type, props.movies, props.shows]);
   
   return (
-    <div>
+    <div className='store'>
       <Sidebar />
-      <div>
+      <div className='store-content'>
         {releases.map((release) => (
           <Link 
-            to={`/shop/${release.type}/${release.id}`}
-            key={release.id}
+            to={`/shop/${release.type}/${release.id}`} 
+            key={release.id} 
+            className='store-item'
           >
             <Cover 
               path={release.poster_path} 
               name={release.original_title || release.name} 
             />
+            <p className='store-item-caption'>
+              <span className='store-item-details'></span>
+              <span className='store-price'>${release.price}</span>
+            </p>
           </Link>
         ))}
       </div>

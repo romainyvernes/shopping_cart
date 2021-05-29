@@ -1,0 +1,34 @@
+.store {
+  display: flex;
+}
+
+.store-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  padding: 2.5em 0.5em;
+  background-color: rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  margin: 1.5em;
+  width: 100%;
+  justify-items: center;
+  align-items: center;
+}
+
+.store-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: fit-content;
+}
+
+.store-item-caption {
+  text-align: center;
+  max-width: fit-content;
+  margin: 0.5em 0 0 0;
+}
+
+.store-price {
+  font-weight: bolder;
+  font-size: 1.1em;
+}
