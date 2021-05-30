@@ -31,13 +31,22 @@ const Routes = (props) => {
           {...props} 
           addToCart={addToCart} 
           cart={cart} 
+          movies={movies}
+          shows={shows}
           incrementCount={incrementCount}
           decrementCount={decrementCount}
-          handleCountChange={handleCountChange} />
+          handleCountChange={handleCountChange} 
+        />
       )} 
       />
       <Route path='/cart' render={(props) => (
-        <Cart {...props} cart={cart} />
+        <Cart 
+          {...props} 
+          cart={cart}
+          incrementCount={incrementCount}
+          decrementCount={decrementCount}
+          handleCountChange={handleCountChange}
+        />
       )} 
       />
     </Switch>

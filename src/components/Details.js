@@ -1,5 +1,8 @@
 import React, { useState, useEffect } from 'react';
+import { format, parseISO } from 'date-fns';
 import Cover from './Cover';
+import Counter from './Counter';
+import '../styles/Details.css';
 
 const Details = (props) => {
   const { 
@@ -8,6 +11,8 @@ const Details = (props) => {
     incrementCount, 
     decrementCount, 
     handleCountChange, 
+    movies,
+    shows,
   } = props;
   const { type, id } = props.match.params;
   
@@ -21,6 +26,11 @@ const Details = (props) => {
         `https://api.themoviedb.org/3/${type}/${id}?api_key=${API_KEY}&language=en-US`
       );
       const releaseObj = await fetchRelease.json();
+
+      movies.concat(shows).map((item) => (
+        String(item.id) === id ? releaseObj.price = item.price : null
+      ));
+
       setRelease(releaseObj);
     } catch (err) {
       console.error(err);
@@ -33,7 +43,7 @@ const Details = (props) => {
   }, []);
   
   return (
-    <div>
+    <div className='details'>
       {release.poster_path
         ? <Cover 
             path={release.poster_path} 
@@ -42,32 +52,47 @@ const Details = (props) => {
         : null
       }
       <section>
-        <p>{release.original_title || release.name}</p>
+        <div className='details-info'>
+          <p className='details-title'>{release.original_title || release.name}</p>
+          <p>
+            <span>
+              {release.genres
+                ? release.genres.map((genre, index) => {
+                    if (index > 0) return ', ' + genre.name;
+                    return genre.name
+                  })
+                : null
+              }
+            </span>
+            <span> | {release.runtime} min </span>
+            <span> 
+              | {release.release_date
+                  ? format(parseISO(release.release_date), 'd MMMM yyyy')
+                  : null
+                }
+            </span>
+            <span> | {release.vote_average} / 10</span>
+          </p>
+          <hr/>
+          <p className='details-summary'>{release.overview}</p>
+          <p className='details-price'>${release.price}</p>
+        </div>
         {cart.find((item) => item.id === release.id)
-          ? <div>
-              <button 
-                name='decrement' 
-                id={release.id}
-                onClick={decrementCount}
-              >
-                -
-              </button>
-              <input 
-                type='number' 
-                min='0' 
-                max='10' 
-                value={cart.find((item) => item.id === release.id).count} 
-                onChange={handleCountChange} 
-              />
-              <button 
-                name='increment' 
-                id={release.id} 
-                onClick={incrementCount}
-              >
-                +
-              </button>
-            </div>
-          : <button id={release.id} onClick={addToCart}>Add to cart</button>
+          ? <Counter 
+              itemId={release.id}
+              count={cart.find((item) => item.id === release.id).count}
+              handleCountChange={handleCountChange}
+              decrementCount={decrementCount}
+              incrementCount={incrementCount}  
+            />
+          : <button 
+              name={type}
+              id={release.id} 
+              onClick={addToCart} 
+              className='details-add-btn'
+            >
+              Add to cart
+            </button>
         }
       </section>
     </div>

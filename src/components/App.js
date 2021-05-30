@@ -59,6 +59,8 @@ const App = () => {
           count: 1,
           poster_path: releases[i].poster_path,
           id: releases[i].id,
+          price: releases[i].price,
+          type: e.currentTarget.name,
         }));
         return;
       }

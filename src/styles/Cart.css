@@ -1,0 +1,13 @@
+.cart {
+  background-color: rgba(0, 0, 0, 0.1);
+  padding: 1em;
+}
+
+.cart-item {
+  display: flex;
+}
+
+.cart-price {
+  font-weight: bolder;
+  font-size: 1.2em;
+}

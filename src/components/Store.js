@@ -48,7 +48,6 @@ const Store = (props) => {
               name={release.original_title || release.name} 
             />
             <p className='store-item-caption'>
-              <span className='store-item-details'></span>
               <span className='store-price'>${release.price}</span>
             </p>
           </Link>
