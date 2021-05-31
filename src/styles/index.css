@@ -10,3 +10,13 @@ body {
 #root {
   min-height: 100vh;
 }
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+box-sizing: inherit;
+}

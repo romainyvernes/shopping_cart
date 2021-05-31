@@ -9,7 +9,7 @@ nav {
 
 nav h1 {
   font-style: italic;
-  margin: 0;
+  margin: 0 0 0.1em 0;
 }
 
 nav ul {
@@ -18,24 +18,17 @@ nav ul {
   margin: 0;
 }
 
-nav li {
-  padding: 0;
+nav a {
   display: flex;
   align-items: center;
   padding: 1em 2em;
+  color: white;
 }
 
-nav li:hover {
+nav a:hover {
   background-color: white;
   cursor: pointer;
-}
-
-nav li:hover > a {
   color: black;
-}
-
-nav a {
-  color: white;
 }
 
 nav img {
@@ -43,7 +36,7 @@ nav img {
   filter: invert(100%);
 }
 
-nav li:hover img {
+nav a:hover img {
   filter: none;
 }
 

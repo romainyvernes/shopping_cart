@@ -8,13 +8,11 @@ const Nav = (props) => {
   
   return (
     <nav>
-      <h1><Link to='/'>Blu-Ray Shop</Link></h1>
+      <Link to='/'><h1>Blu-Ray Shop</h1></Link>
       <ul>
-        <li>
-          <Link to='/shop/all'>Store</Link>
-        </li>
-        <li>
-          <Link to='/cart'>
+        <Link to='/shop/all'><li>Store</li></Link>
+        <Link to='/cart'>
+          <li>
             <div className='nav-cart'>
               <img src={cartLogo} alt='Shopping cart logo' />
               <span>
@@ -24,8 +22,8 @@ const Nav = (props) => {
                 }, 0)}
               </span>
             </div>
-          </Link>
-        </li>
+          </li>
+        </Link>
       </ul>
     </nav>
   );

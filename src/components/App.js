@@ -3,6 +3,7 @@ import { BrowserRouter as Router } from 'react-router-dom';
 import '../styles/App.css';
 import Routes from './Routes';
 import Nav from './Nav';
+import Footer from './Footer';
 
 const App = () => {
   const [movies, setMovies] = useState([]);
@@ -112,6 +113,19 @@ const App = () => {
 
     setCart(currentCart);
   };
+
+  const deleteItemFromCart = (e) => {
+    const currentCart = [...cart];
+    
+    for (let i = 0; i < currentCart.length; i++) {
+      if (String(currentCart[i].id) === e.currentTarget.id) {
+        currentCart.splice(i, 1);
+        break;
+      }
+    }
+
+    setCart(currentCart);
+  };
   
   return (
     <Router>
@@ -123,7 +137,10 @@ const App = () => {
         addToCart={addToCart}
         incrementCount={incrementCount}
         decrementCount={decrementCount}
-        handleCountChange={handleCountChange} />
+        handleCountChange={handleCountChange}
+        deleteItemFromCart={deleteItemFromCart}
+      />
+      <Footer />
     </Router>
   );
 };

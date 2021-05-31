@@ -14,6 +14,7 @@ const Routes = (props) => {
     incrementCount, 
     decrementCount,
     handleCountChange,
+    deleteItemFromCart,
   } = props;
   
   return (
@@ -46,6 +47,7 @@ const Routes = (props) => {
           incrementCount={incrementCount}
           decrementCount={decrementCount}
           handleCountChange={handleCountChange}
+          deleteItemFromCart={deleteItemFromCart}
         />
       )} 
       />

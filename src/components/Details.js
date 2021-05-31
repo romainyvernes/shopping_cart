@@ -64,12 +64,16 @@ const Details = (props) => {
                 : null
               }
             </span>
-            <span> | {release.runtime} min </span>
+            <span>{` | ${release.runtime || release.episode_run_time} min`}</span>
             <span> 
-              | {release.release_date
-                  ? format(parseISO(release.release_date), 'd MMMM yyyy')
-                  : null
-                }
+              {release.release_date
+                ? ` | ${format(parseISO(release.release_date), 'd MMMM yyyy')}`
+                : null
+              }
+              {release.first_air_date
+                ? ` | ${format(parseISO(release.first_air_date), 'yyyy')} - ${format(parseISO(release.last_air_date), 'yyyy')}`
+                : null
+              }
             </span>
             <span> | {release.vote_average} / 10</span>
           </p>
