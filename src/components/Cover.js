@@ -5,8 +5,8 @@ const Cover = (props) => {
   const { path, name } = props;
   
   return (
-    <div className='cover'>
-      <p className='cover-caption'>BLU-RAY</p>
+    <div className='cover cover-header-bg'>
+      <p className='caption cover-font'>BLU-RAY</p>
       <img 
         src={`https://image.tmdb.org/t/p/w300${path}`} 
         alt={`${name} cover`}

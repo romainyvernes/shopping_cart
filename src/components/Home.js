@@ -8,26 +8,30 @@ const Home = (props) => {
   
   return (
     <div className='home'>
-      <div className='release-wrapper'>
-        <h2><Link to='/shop/movies'>Top movie releases</Link></h2>
-        <div className='release-subwrapper'>
+      <section className='top-releases'>
+        <h2 className="headings-bg"><Link to='/shop/movies'>Top movies</Link></h2>
+        <ul className='release-list'>
           {movies.slice(0, 5).map((movie) => (
-            <Link to={`/shop/movie/${movie.id}`} key={movie.id}>
-              <Cover path={movie.poster_path} name={movie.original_title} />
-            </Link>
+            <li key={movie.id}>
+              <Link to={`/shop/movie/${movie.id}`}>
+                <Cover path={movie.poster_path} name={movie.original_title} />
+              </Link>
+            </li>
           ))}
-        </div>
-      </div>
-      <div className='release-wrapper'>
-        <h2><Link to='/shop/tv'>Top TV show releases</Link></h2>
-        <div className='release-subwrapper'>
+        </ul>
+      </section>
+      <section className='top-releases'>
+        <h2 className="headings-bg"><Link to='/shop/tv'>Top TV shows</Link></h2>
+        <ul className='release-list'>
           {shows.slice(0, 5).map((show) => (
-            <Link to={`/shop/tv/${show.id}`} key={show.id}>
-              <Cover path={show.poster_path} name={show.name} />
-            </Link>
+            <li key={show.id}>
+              <Link to={`/shop/tv/${show.id}`}>
+                <Cover path={show.poster_path} name={show.name} />
+              </Link>
+            </li>
           ))}
-        </div>
-      </div>
+        </ul>
+      </section>
     </div>
   );
 };

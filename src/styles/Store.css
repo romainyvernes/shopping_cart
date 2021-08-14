@@ -2,7 +2,12 @@
   display: flex;
 }
 
-.store-content {
+.store aside {
+  flex-basis: 20%;
+}
+
+.items {
+  flex-basis: 70%;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 30px;

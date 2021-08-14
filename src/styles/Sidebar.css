@@ -1,20 +1,16 @@
 .sidebar {
-  text-align: left;
-  min-width: 200px;
-  padding-left: 2.5em;
   background-color: rgba(0, 0, 0, 0.1);
-  min-height: 100%;
 }
 
-.sidebar h2 {
+.sidebar li {
   margin: 1.5em 0;
 }
 
 .sidebar a {
-  transition: 0.2s;
+  transition: all 0.2s;
 }
 
-.sidebar .selected {
+.selected {
   font-style: italic;
   padding-left: 0.5em;
   color: rgb(20, 80, 150);

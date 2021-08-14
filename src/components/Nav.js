@@ -7,25 +7,25 @@ const Nav = (props) => {
   const { cart } = props;
   
   return (
-    <nav>
-      <Link to='/'><h1>Blu-Ray Shop</h1></Link>
-      <ul>
-        <Link to='/shop/all'><li>Store</li></Link>
-        <Link to='/cart'>
-          <li>
-            <div className='nav-cart'>
-              <img src={cartLogo} alt='Shopping cart logo' />
+    <div className="navigation">
+      <nav>
+        <Link to="/shopping_cart/"><h1>Blu-Ray Shop</h1></Link>
+        <ul>
+          <li><Link to="/shop/all">Store</Link></li>
+          <li className="cart-icon">
+            <Link to='/cart'>
+              <img src={cartLogo} alt="Shopping cart logo" />
               <span>
                 {cart.reduce((total, item) => {
                   total += item.count;
                   return total;
                 }, 0)}
               </span>
-            </div>
+            </Link>
           </li>
-        </Link>
-      </ul>
-    </nav>
+        </ul>
+      </nav>
+    </div>
   );
 };
 

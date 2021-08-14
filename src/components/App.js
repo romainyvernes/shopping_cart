@@ -1,5 +1,4 @@
 import React, { useState, useEffect} from 'react';
-import { BrowserRouter as Router } from 'react-router-dom';
 import '../styles/App.css';
 import Routes from './Routes';
 import Nav from './Nav';
@@ -128,20 +127,25 @@ const App = () => {
   };
   
   return (
-    <Router>
-      <Nav cart={cart} />
-      <Routes 
-        cart={cart} 
-        movies={movies} 
-        shows={shows} 
-        addToCart={addToCart}
-        incrementCount={incrementCount}
-        decrementCount={decrementCount}
-        handleCountChange={handleCountChange}
-        deleteItemFromCart={deleteItemFromCart}
-      />
-      <Footer />
-    </Router>
+    <div className="app">
+      <header className="primary-header primary-background">
+        <Nav cart={cart} />
+      </header>
+      <main>
+        <Routes 
+          cart={cart} 
+          movies={movies} 
+          shows={shows} 
+          addToCart={addToCart}
+          incrementCount={incrementCount}
+          decrementCount={decrementCount}
+          handleCountChange={handleCountChange}
+          deleteItemFromCart={deleteItemFromCart} />
+      </main>
+      <footer className="primary-footer primary-background">
+        <Footer />
+      </footer> 
+    </div>
   );
 };
 

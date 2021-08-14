@@ -1,18 +1,8 @@
-.cover {
-  max-width: fit-content;
-}
-
 .cover img {
-  height: 350px;
+  height: 40vw;
 }
 
-.cover-caption {
-  background-color: rgb(49, 148, 206);
-  color: white;
-  margin: 0;
-  text-align: center;
-  padding: 0.2em 0;
-  font-family: 'Kanit', sans-serif;
-  font-weight: bold;
-  font-size: 1.2em;
+.cover .caption {
+  padding: 0.5em 0;
+  font-size: 1.7vw;
 }

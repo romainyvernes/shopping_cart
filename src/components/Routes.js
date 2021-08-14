@@ -23,6 +23,10 @@ const Routes = (props) => {
         <Home {...props} movies={movies} shows={shows} />
       )} 
       />
+      <Route exact path='/shopping_cart/' render={(props) => (
+        <Home {...props} movies={movies} shows={shows} />
+      )} 
+      />
       <Route exact path='/shop/:type' render={(props) => (
         <Store {...props} movies={movies} shows={shows} />
       )} 

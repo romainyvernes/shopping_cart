@@ -1,55 +1,40 @@
-nav {
-  background-color: rgb(20, 80, 150);
+.navigation nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 2em;
-  color: white;
+  padding: 1em;
 }
 
-nav h1 {
+.navigation h1 {
   font-style: italic;
-  margin: 0 0 0.1em 0;
+  white-space: nowrap;
+  font-size: 3vw;
 }
 
-nav ul {
-  display: flex;
-  list-style: none;
-  margin: 0;
-}
-
-nav a {
+.navigation ul {
   display: flex;
   align-items: center;
-  padding: 1em 2em;
-  color: white;
 }
 
-nav a:hover {
-  background-color: white;
-  cursor: pointer;
-  color: black;
+.navigation li {
+  margin: 0 1em;
 }
 
-nav img {
-  height: 30px;
+.cart-icon a {
+  display: flex;
+  align-items: center;
+}
+
+.cart-icon img {
+  height: 2vw;
   filter: invert(100%);
+  margin-right: 0.4em;
 }
 
-nav a:hover img {
+.cart-icon a:hover img {
   filter: none;
 }
 
-.nav-cart {
-  display: flex;
-  align-items: center;
-  position: relative;
-}
-
-.nav-cart span {
-  font-size: 0.5em;
-  position: absolute;
-  width: 10px;
-  left: 12px;
-  top: 7.5px;
+@media screen and (max-width: 767px) {
+  
 }

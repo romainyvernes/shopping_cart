@@ -35,24 +35,21 @@ const Store = (props) => {
   
   return (
     <div className='store'>
-      <Sidebar />
-      <div className='store-content'>
+      <aside>
+        <Sidebar />
+      </aside>
+      <section className='items'>
         {releases.map((release) => (
-          <Link 
-            to={`/shop/${release.type}/${release.id}`} 
-            key={release.id} 
-            className='store-item'
-          >
-            <Cover 
-              path={release.poster_path} 
-              name={release.original_title || release.name} 
-            />
-            <p className='store-item-caption'>
-              <span className='store-price'>${release.price}</span>
-            </p>
-          </Link>
+          <li key={release.id}>
+            <Link to={`/shop/${release.type}/${release.id}`} 
+                  className='store-item'>
+              <Cover path={release.poster_path} 
+                     name={release.original_title || release.name} />
+              <p className='store-item-caption'>${release.price}</p>
+            </Link>
+          </li>
         ))}
-      </div>
+      </section>
     </div>
   );
 };
