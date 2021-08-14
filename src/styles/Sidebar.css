@@ -1,9 +1,10 @@
 .sidebar {
   background-color: rgba(0, 0, 0, 0.1);
+  text-align: left;
 }
 
 .sidebar li {
-  margin: 1.5em 0;
+  margin-bottom: 1.5em;
 }
 
 .sidebar a {
@@ -12,6 +13,6 @@
 
 .selected {
   font-style: italic;
-  padding-left: 0.5em;
-  color: rgb(20, 80, 150);
+  margin-left: 1em;
+  color: rgb(211, 134, 34);
 }

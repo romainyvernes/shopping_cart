@@ -4,7 +4,7 @@ import '../styles/Footer.css';
 const Footer = (props) => {
   return (
     <div className="footer">
-      <p>
+      <p className="license">
         Data provided by 
         <span>
           <a href='https://www.themoviedb.org/' target="_blank" rel="noreferrer">

@@ -1,5 +1,6 @@
 .store {
   display: flex;
+  padding: 2em;
 }
 
 .store aside {
@@ -7,33 +8,26 @@
 }
 
 .items {
-  flex-basis: 70%;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 30px;
-  padding: 2.5em 0.5em;
-  background-color: rgba(0, 0, 0, 0.1);
-  border-radius: 5px;
-  margin: 1.5em;
-  width: 100%;
-  justify-items: center;
-  align-items: center;
+  flex-basis: 80%;
 }
 
-.store-item {
+.items ul {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  max-width: fit-content;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 2em;
 }
 
-.store-item-caption {
-  text-align: center;
-  max-width: fit-content;
-  margin: 0.5em 0 0 0;
+.items li {
+  transition: transform 0.2s;
 }
 
-.store-price {
-  font-weight: bolder;
-  font-size: 1.1em;
+.items li:hover {
+  transform: scale(1.05);
+}
+
+.store .price {
+  margin-top: 0.5em;
+  font-weight: 700;
+  font-size: 2vw;
 }

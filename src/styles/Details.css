@@ -1,53 +1,47 @@
 .details {
-  display: flex;
-  height: fit-content;
-  width: fit-content;
-  margin: 1.5em auto;
-  padding: 2em 0 2em 2em;
-  background-color: rgba(0, 0, 0, 0.1);
-  border-radius: 5px;
+  padding: 2em;
 }
 
 .details section {
-  margin: 0 3em;
   display: flex;
-  flex-direction: column;
-  max-width: 50vw;
+  justify-content: center;
+  gap: 2.5em;
 }
 
-.details-title {
-  font-weight: bolder;
-  font-size: 2em;
-  margin: 0;
+.details h2 {
+  font-size: 3vw;
 }
 
-.details-summary {
+.details .info {
+  margin: 1em 0;
+}
+
+.details .summary {
   text-align: justify;
-  text-justify: auto;
+  margin: 1.5em 0;
 }
 
-.details-price {
+.details .price {
+  font-weight: 700;
+  font-size: 2.8vw;
+}
+
+.details footer {
+  margin-top: 3em;
+}
+
+.details .add-to-cart {
+  color: #000;
   margin-top: 1em;
-  font-weight: bolder;
-  font-size: 1.2em;
-}
-
-.details-add-btn {
-  width: fit-content;
-  display: flex;
-  align-self: center;
   padding: 0.5em 1em;
-  font-size: 1em;
-  background-color: rgb(255, 208, 0);
-  border: none;
+  font-size: 1.8vw;
   border-radius: 5px;
-  box-shadow: -1px 1px 3px rgba(0, 0, 0, 0.5);
 }
 
-.details-add-btn:active {
+.details .add-to-cart:active {
   transform: scale(0.98);
 }
 
-.details-add-btn:hover {
-  background-color: rgba(255, 208, 0, 0.5);
+.details .add-to-cart:hover {
+  color: #fff;
 }

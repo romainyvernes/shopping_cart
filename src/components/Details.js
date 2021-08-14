@@ -44,60 +44,64 @@ const Details = (props) => {
   
   return (
     <div className='details'>
-      {release.poster_path
-        ? <Cover 
-            path={release.poster_path} 
-            name={release.original_title || release.name} 
-          />
-        : null
-      }
       <section>
-        <div className='details-info'>
-          <p className='details-title'>{release.original_title || release.name}</p>
-          <p>
-            <span>
-              {release.genres
-                ? release.genres.map((genre, index) => {
-                    if (index > 0) return ', ' + genre.name;
-                    return genre.name
-                  })
-                : null
-              }
-            </span>
-            <span>{` | ${release.runtime || release.episode_run_time} min`}</span>
-            <span> 
-              {release.release_date
-                ? ` | ${format(parseISO(release.release_date), 'd MMMM yyyy')}`
-                : null
-              }
-              {release.first_air_date
-                ? ` | ${format(parseISO(release.first_air_date), 'yyyy')} - ${format(parseISO(release.last_air_date), 'yyyy')}`
-                : null
-              }
-            </span>
-            <span> | {release.vote_average} / 10</span>
-          </p>
-          <hr/>
-          <p className='details-summary'>{release.overview}</p>
-          <p className='details-price'>${release.price}</p>
-        </div>
-        {cart.find((item) => item.id === release.id)
-          ? <Counter 
-              itemId={release.id}
-              count={cart.find((item) => item.id === release.id).count}
-              handleCountChange={handleCountChange}
-              decrementCount={decrementCount}
-              incrementCount={incrementCount}  
+        {release.poster_path
+          ? <Cover 
+              path={release.poster_path} 
+              name={release.original_title || release.name} 
             />
-          : <button 
-              name={type}
-              id={release.id} 
-              onClick={addToCart} 
-              className='details-add-btn'
-            >
-              Add to cart
-            </button>
+          : null
         }
+        <article>
+          <header>
+            <h2>{release.original_title || release.name}</h2>
+            <p className="info">
+              <span>
+                {release.genres
+                  ? release.genres.map((genre, index) => {
+                      if (index > 0) return ', ' + genre.name;
+                      return genre.name
+                    })
+                  : null
+                }
+              </span>
+              <span>{` | ${release.runtime || release.episode_run_time} min`}</span>
+              <span> 
+                {release.release_date
+                  ? ` | ${format(parseISO(release.release_date), 'd MMMM yyyy')}`
+                  : null
+                }
+                {release.first_air_date
+                  ? ` | ${format(parseISO(release.first_air_date), 'yyyy')} - ${format(parseISO(release.last_air_date), 'yyyy')}`
+                  : null
+                }
+              </span>
+              <span> | {release.vote_average} / 10</span>
+            </p>
+            <hr/>
+          </header>
+          <p className='summary'>{release.overview}</p>
+          <footer>
+            <p className='price'>${release.price}</p>
+            {cart.find((item) => item.id === release.id)
+              ? <Counter 
+                  itemId={release.id}
+                  count={cart.find((item) => item.id === release.id).count}
+                  handleCountChange={handleCountChange}
+                  decrementCount={decrementCount}
+                  incrementCount={incrementCount}  
+                />
+              : <button 
+                  name={type}
+                  id={release.id} 
+                  onClick={addToCart} 
+                  className='add-to-cart button-bg'
+                >
+                  Add to cart
+                </button>
+            }
+          </footer>
+        </article>
       </section>
     </div>
   );

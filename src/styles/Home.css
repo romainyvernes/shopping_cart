@@ -17,4 +17,13 @@
   display: flex;
   gap: 2em;
   overflow-x: scroll;
+  padding: 1em;
+}
+
+.release-list li {
+  transition: transform 0.2s;
+}
+
+.release-list li:hover {
+  transform: scale(1.05);
 }
