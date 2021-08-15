@@ -19,66 +19,63 @@ const Cart = (props) => {
   
   return (
     <div className='cart'>
+      {/* render cart items when cart is not empty */}
       {cart.length > 0
-        ? <div className='cart-items-wrapper'>
-            {cart.map((item, index) => (
-              <div key={item.id}>
-                <div className='cart-item'>
-                  <Link to={`/shop/${item.type}/${item.id}`}>
-                    <Cover 
-                      path={item.poster_path} 
-                      name={item.original_title || item.name} 
-                    />
-                  </Link>
-                  <div className='cart-price-wrapper'>
-                    <p className='cart-price'>${item.price}</p>
-                    <div className='cart-counter-controls'>
-                      <Counter
-                        itemId={item.id}
-                        count={item.count}
-                        incrementCount={incrementCount}
-                        decrementCount={decrementCount}
-                        handleCountChange={handleCountChange}
-                      />
-                      <button 
-                        id={item.id} 
-                        className='cart-delete' 
-                        onClick={deleteItemFromCart}
-                      >
-                        Delete
-                      </button>
+        ? <section className="filled">
+            <ul>
+              {cart.map((item, index) => (
+                <li key={item.id} className='item'>
+                  <article>
+                    <div className="item-cover">
+                      <Link to={`/shop/${item.type}/${item.id}`}>
+                        <Cover 
+                          path={item.poster_path} 
+                          name={item.original_title || item.name} 
+                        />
+                      </Link>
                     </div>
-                  </div>
-                </div>
-                {index !== cart.length - 1 ? <hr/> : null}
-              </div>
-            ))}
-          </div>
-        : <div className='cart-empty'>
-            <p>Your cart is currently empty.</p>
-          </div>
-      }
-      {cart.length > 0
-        ? <div className='cart-checkout-wrapper'>
-            <div className='cart-subtotal-wrapper'>
-              <p className='cart-subtotal-label'>
-                Subtotal ( {cart.reduce((total, item) => {
+                    <div className='purchase-info'>
+                      <p className='price'>${item.price}</p>
+                      <div className='counter-controls'>
+                        <Counter
+                          itemId={item.id}
+                          count={item.count}
+                          incrementCount={incrementCount}
+                          decrementCount={decrementCount}
+                          handleCountChange={handleCountChange}
+                        />
+                        <button id={item.id} 
+                                className='delete button-bg primary-btn' 
+                                onClick={deleteItemFromCart}>
+                          Delete
+                        </button>
+                      </div>
+                    </div>
+                  </article>
+                  {/* add horizontal line when cart item is not last in the list */}
+                  {index !== cart.length - 1 ? <hr/> : null}
+                </li>
+              ))}
+            </ul>
+            <article className='checkout'>
+              <p className='subtotal'>
+                Subtotal (<span>{cart.reduce((total, item) => {
                   total += item.count;
                   return total;
-                }, 0)} item(s) ):
-              </p>
-              <p className='cart-subtotal-value'>
-                ${cart.reduce((total, item) => {
+                }, 0)}</span> item(s)): $<span>{cart.reduce((total, item) => {
                   total += item.count * item.price;
                   return total;
-                }, 0)}
+                }, 0)}</span>
               </p>
-            </div>
-            <button className='cart-checkout-btn' onClick={checkout}>
-              Checkout
-            </button>
-          </div>
-        : null
+              <button className='checkout-btn button-bg primary-btn' 
+                      onClick={checkout}>
+                Checkout
+              </button>
+            </article>
+          </section>
+        : <section className='empty'>
+            <p>Your cart is currently empty.</p>
+          </section>
       }
     </div>
   );

@@ -15,7 +15,7 @@
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  gap: 2em;
+  gap: 3em;
 }
 
 .items li {
@@ -26,8 +26,12 @@
   transform: scale(1.05);
 }
 
+.store .cover {
+  height: 400px;
+}
+
 .store .price {
   margin-top: 0.5em;
   font-weight: 700;
-  font-size: 2vw;
+  font-size: 1.3em;
 }

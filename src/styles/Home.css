@@ -1,26 +1,31 @@
+.home {
+  padding: 2em 0;
+}
+
+/* sections with top movies and tv shows */
 .top-releases {
-  border-radius: 5px;
-  padding: 2.5em;
-  margin: 2.5em;
+  margin: 1em 0 5em 0;
 }
 
 .home h2 {
-  margin-bottom: 2.5em;
-  width: fit-content;
+  margin: 0 0 2em 2em;
   padding: 1em 1.5em;
+  width: fit-content;
   border-radius: 5px;
-  font-size: 1.7vw;
   text-transform: uppercase;
-}
+} 
 
+/* list of movie/show covers */
 .release-list {
   display: flex;
   gap: 2em;
   overflow-x: scroll;
-  padding: 1em;
+  padding: 1em 2em;
 }
 
+/* invidivual movie/show covers */
 .release-list li {
+  height: 400px;
   transition: transform 0.2s;
 }
 

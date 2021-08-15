@@ -12,25 +12,21 @@ const Counter = (props) => {
   
   return (
     <div className='counter'>
-      <button 
-        name='decrement' 
-        id={itemId}
-        onClick={decrementCount}
-      >
+      <button name='decrement' 
+              id={itemId}
+              onClick={decrementCount}
+              className="button-bg primary-btn">
         -
       </button>
-      <input 
-        type='number' 
-        min='0' 
-        max='10' 
-        value={count} 
-        onChange={handleCountChange} 
-      />
-      <button 
-        name='increment' 
-        id={itemId} 
-        onClick={incrementCount}
-      >
+      <input type='number' 
+             min='0' 
+             max='10' 
+             value={count} 
+             onChange={handleCountChange} />
+      <button name='increment button-bg' 
+              id={itemId} 
+              onClick={incrementCount}
+              className="button-bg primary-btn">
         +
       </button>
     </div>

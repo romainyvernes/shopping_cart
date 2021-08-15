@@ -2,22 +2,19 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1em;
+  padding: 0.5em 2em;
 }
 
 .navigation h1 {
   font-style: italic;
   white-space: nowrap;
-  font-size: 3vw;
+  font-size: 3em;
 }
 
 .navigation ul {
   display: flex;
   align-items: center;
-}
-
-.navigation li {
-  margin: 0 1em;
+  gap: 2em;
 }
 
 .cart-icon a {

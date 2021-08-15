@@ -9,7 +9,9 @@ const Home = (props) => {
   return (
     <div className='home'>
       <section className='top-releases'>
-        <h2 className="headings-bg"><Link to='/shop/movies'>Top movies</Link></h2>
+        <Link to='/shop/movies'>
+          <h2 className="primary-background">Top movies</h2>
+        </Link>
         <ul className='release-list'>
           {movies.slice(0, 5).map((movie) => (
             <li key={movie.id}>
@@ -21,7 +23,7 @@ const Home = (props) => {
         </ul>
       </section>
       <section className='top-releases'>
-        <h2 className="headings-bg"><Link to='/shop/tv'>Top TV shows</Link></h2>
+        <Link to='/shop/tv'><h2 className="primary-background">Top TV shows</h2></Link>
         <ul className='release-list'>
           {shows.slice(0, 5).map((show) => (
             <li key={show.id}>

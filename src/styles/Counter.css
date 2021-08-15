@@ -1,33 +1,16 @@
+.counter {
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+}
+
 .counter button {
-  background-color: rgb(255, 208, 0);
-  border: none;
-  border-radius: 5px;
-  box-shadow: -1px 1px 3px rgba(0, 0, 0, 0.5);
   padding: 0.2em 0.7em;
-  font-size: 1em;
+  font-size: 0.7em;
 }
 
 .counter input {
-  border: none;
-  margin: 0 1em;
-  border-radius: 5px;
-  text-align: center;
-  width: 30px;
-  box-shadow: -1px 1px 3px rgba(0, 0, 0, 0.5);
-  padding: 0.2em 0;
-  font-size: 1em;
+  margin: 0 0.2em;
+  font-size: 1.2em;
 }
 
-.counter input::-webkit-outer-spin-button,
-.counter input::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
-}
-
-.counter button:active {
-  transform: scale(0.98);
-}
-
-.counter button:hover {
-  background-color: rgba(255, 208, 0, 0.5);
-}

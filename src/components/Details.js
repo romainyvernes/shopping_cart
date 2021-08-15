@@ -83,23 +83,23 @@ const Details = (props) => {
           <p className='summary'>{release.overview}</p>
           <footer>
             <p className='price'>${release.price}</p>
-            {cart.find((item) => item.id === release.id)
-              ? <Counter 
-                  itemId={release.id}
-                  count={cart.find((item) => item.id === release.id).count}
-                  handleCountChange={handleCountChange}
-                  decrementCount={decrementCount}
-                  incrementCount={incrementCount}  
-                />
-              : <button 
-                  name={type}
-                  id={release.id} 
-                  onClick={addToCart} 
-                  className='add-to-cart button-bg'
-                >
-                  Add to cart
-                </button>
-            }
+            <div className="cart-btn">
+              {cart.find((item) => item.id === release.id)
+                ? <Counter 
+                    itemId={release.id}
+                    count={cart.find((item) => item.id === release.id).count}
+                    handleCountChange={handleCountChange}
+                    decrementCount={decrementCount}
+                    incrementCount={incrementCount}  
+                  />
+                : <button name={type}
+                          id={release.id} 
+                          onClick={addToCart} 
+                          className='add-to-cart button-bg primary-btn'>
+                    Add to cart
+                  </button>
+              }
+            </div>
           </footer>
         </article>
       </section>
