@@ -8,7 +8,9 @@ const Store = (props) => {
   const { type } = props.match.params;
 
   const [releases, setReleases] = useState([]);
+  
   useEffect(() => {
+    // add "type" key to both movies and shows
     const movies = props.movies.map((movie) => {
       movie.type = 'movie';
       return movie;
@@ -17,7 +19,7 @@ const Store = (props) => {
       show.type = 'tv';
       return show;
     });
-    
+    // update list of releases based on updates on "type"
     switch (type) {
       case 'movies':
         setReleases(movies);
@@ -40,15 +42,21 @@ const Store = (props) => {
       </aside>
       <section className='items'>
         <ul>
-          {releases.map((release) => (
-            <li key={release.id}>
-              <Link to={`/shop/${release.type}/${release.id}`}>
-                <Cover path={release.poster_path} 
-                       name={release.original_title || release.name} />
-                <p className='price'>${release.price}</p>
-              </Link>
-            </li>
-          ))}
+          {/* eslint-disable-next-line array-callback-return */}
+          {releases.map((release) => {
+            // filter out releases that do not include a poster
+            if (release.poster_path) {
+              return (
+                <li key={release.id}>
+                  <Link to={`/shop/${release.type}/${release.id}`}>
+                    <Cover path={release.poster_path} 
+                          name={release.original_title || release.name} />
+                    <p className='price'>${release.price}</p>
+                  </Link>
+                </li>
+              );
+            }
+          })}
         </ul>
       </section>
     </div>

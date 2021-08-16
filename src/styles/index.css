@@ -118,6 +118,12 @@ button:hover {
 	transform: scale(0.98);
 }
 
+/* applies to section headings on home page */
+.hovered-links:hover {
+	background: #fff;
+	color: rgb(211, 134, 34);
+}
+
 /*
  * Backgrounds
  */

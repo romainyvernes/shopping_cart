@@ -12,7 +12,7 @@ const App = () => {
     const API_KEY = process.env.REACT_APP_API_KEY;
 
     try {
-      // retrieve movies from api
+      // retrieve all popular movies from api
       const fetchMovies = await fetch(
         `https://api.themoviedb.org/3/movie/popular?api_key=${API_KEY}&language=en-US&US`
       );
@@ -20,13 +20,14 @@ const App = () => {
       
       // set fictitious prices
       const MOVIE_PRICES = ['19.99', '14.99', '9.99'];
-      
+      // store all movies fetched into state
       setMovies(movies.results.map((movie) => {
+        /* create "price" key in movie object */
         movie.price = MOVIE_PRICES[Math.floor(Math.random() * 3)];
         return movie;
       }));
       
-      // retrieve tv shows from api
+      // retrieve all popular tv shows from api
       const fetchShows = await fetch(
         `https://api.themoviedb.org/3/tv/popular?api_key=${API_KEY}&language=en-US`
       );
@@ -34,7 +35,7 @@ const App = () => {
       
       // set fictitious prices
       const SHOW_PRICES = ['99.99', '149.99', '129.99'];
-
+      // store all shows fetched into state
       setShows(shows.results.map((show) => {
         show.price = SHOW_PRICES[Math.floor(Math.random() * 3)];
         return show;

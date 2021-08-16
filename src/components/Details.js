@@ -14,6 +14,7 @@ const Details = (props) => {
     movies,
     shows,
   } = props;
+  
   const { type, id } = props.match.params;
   
   const [release, setRelease] = useState({});

@@ -3,17 +3,31 @@ import { Link } from 'react-router-dom';
 import Cover from './Cover';
 import '../styles/Home.css';
 
-const Home = (props) => {
-  const { movies, shows } = props;
+const Home = ({ movies, shows }) => {
+
+  const getTopFive = (items) => {
+    let topFive = [];
+    for (let i = 0; i < items.length; i++) {
+      // end loop when topFive array contains 5 items
+      if (topFive.length === 5) {
+        break;
+      }
+      // add item to topFive array provided that it contains a poster
+      if (items[i].poster_path) {
+        topFive.push(items[i]);
+      }
+    }
+    return topFive;
+  };
   
   return (
     <div className='home'>
       <section className='top-releases'>
         <Link to='/shop/movies'>
-          <h2 className="primary-background">Top movies</h2>
+          <h2 className="primary-background hovered-links">Top movies</h2>
         </Link>
         <ul className='release-list'>
-          {movies.slice(0, 5).map((movie) => (
+          {getTopFive(movies).map((movie) => (
             <li key={movie.id}>
               <Link to={`/shop/movie/${movie.id}`}>
                 <Cover path={movie.poster_path} name={movie.original_title} />
@@ -23,9 +37,11 @@ const Home = (props) => {
         </ul>
       </section>
       <section className='top-releases'>
-        <Link to='/shop/tv'><h2 className="primary-background">Top TV shows</h2></Link>
+        <Link to='/shop/tv'>
+          <h2 className="primary-background hovered-links">Top TV shows</h2>
+        </Link>
         <ul className='release-list'>
-          {shows.slice(0, 5).map((show) => (
+          {getTopFive(shows).map((show) => (
             <li key={show.id}>
               <Link to={`/shop/tv/${show.id}`}>
                 <Cover path={show.poster_path} name={show.name} />
