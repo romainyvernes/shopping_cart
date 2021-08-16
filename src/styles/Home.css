@@ -1,10 +1,12 @@
 .home {
-  padding: 2em 0;
+  padding: 3em 0;
 }
 
 /* sections with top movies and tv shows */
 .top-releases {
-  margin: 1em 0 5em 0;
+  width: fit-content;
+  margin: 0 auto 5em auto;
+  max-width: 100%;
 }
 
 .home h2 {
@@ -31,4 +33,15 @@
 
 .release-list li:hover {
   transform: scale(1.05);
+}
+
+/* mobile display */
+@media screen and (max-width: 767px) {
+	.top-releases:nth-child(2) {
+    margin-bottom: 0;
+  }
+
+  .home h2 {
+    margin: 0 auto 2em auto;
+  }
 }

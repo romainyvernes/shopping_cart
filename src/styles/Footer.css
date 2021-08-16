@@ -1,7 +1,15 @@
 .footer {
   padding: 1em;
+  font-size: 0.5em;
 }
 
 .license span {
   margin-left: 0.5em;
+}
+
+/* tablet display */
+@media screen and (max-width: 1023px) {
+  .license img {
+    height: 10px;
+  }
 }

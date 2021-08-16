@@ -8,13 +8,7 @@
 .navigation h1 {
   font-style: italic;
   white-space: nowrap;
-  font-size: 3em;
-}
-
-.navigation ul {
-  display: flex;
-  align-items: center;
-  gap: 2em;
+  font-size: 2.5em;
 }
 
 .cart-icon a {
@@ -32,6 +26,18 @@
   filter: none;
 }
 
+/* standard display */
+@media screen and (min-width: 768px) {
+  .navigation ul {
+    display: flex;
+    align-items: center;
+    gap: 2em;
+  }
+}
+
+/* mobile display */
 @media screen and (max-width: 767px) {
-  
+  .navigation nav {
+    padding: 0.5em 1.5em;
+  }
 }

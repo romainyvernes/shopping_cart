@@ -10,7 +10,7 @@ const Nav = (props) => {
     <div className="navigation">
       <nav>
         <Link to="/shopping_cart/"><h1>Blu-Ray Shop</h1></Link>
-        <ul>
+        <ul className="regular-display">
           <li><Link to="/shop/all">Store</Link></li>
           <li className="cart-icon">
             <Link to='/cart'>
@@ -24,6 +24,7 @@ const Nav = (props) => {
             </Link>
           </li>
         </ul>
+        <a href="#" className="mobile">icon</a>
       </nav>
     </div>
   );

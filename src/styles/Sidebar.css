@@ -1,6 +1,7 @@
 .sidebar {
   background-color: rgba(0, 0, 0, 0.1);
   text-align: left;
+  white-space: nowrap;
 }
 
 .sidebar li {
@@ -15,4 +16,15 @@
   font-style: italic;
   margin-left: 1em;
   color: rgb(211, 134, 34);
+}
+
+/* mobile display */
+@media screen and (max-width: 767px) {
+	.selected {
+    margin: 0;
+  }
+
+  .sidebar li {
+    margin: 0;
+  }
 }

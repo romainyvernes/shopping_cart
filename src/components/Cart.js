@@ -64,7 +64,7 @@ const Cart = (props) => {
                   return total;
                 }, 0)}</span> item(s)): $<span>{cart.reduce((total, item) => {
                   total += item.count * item.price;
-                  return total;
+                  return Math.round(total * 100) / 100;
                 }, 0)}</span>
               </p>
               <button className='checkout-btn button-bg primary-btn' 

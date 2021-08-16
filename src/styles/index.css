@@ -159,3 +159,30 @@ input[type="number"]::-webkit-outer-spin-button,
 input[type="number"]::-webkit-inner-spin-button {
 	-webkit-appearance: none;
 }
+
+/*
+ * Responsiveness
+ */
+
+.mobile {
+	display: none;
+}
+
+/* tablet display */
+@media screen and (max-width: 1023px) {
+	/* shrink font size across website */
+	body {
+		font-size: 0.9em;
+	}
+}
+
+/* mobile display */
+@media screen and (max-width: 767px) {
+	.mobile {
+		display: block;
+	}
+
+	.regular-display {
+		display: none;
+	}
+}

@@ -1,14 +1,14 @@
 .store {
   display: flex;
-  padding: 2em;
+  padding: 2.5em 2em;
 }
 
 .store aside {
-  flex-basis: 20%;
+  flex-basis: 15%;
 }
 
 .items {
-  flex-basis: 80%;
+  flex-basis: 85%;
 }
 
 .items ul {
@@ -34,4 +34,29 @@
   margin-top: 0.5em;
   font-weight: 700;
   font-size: 1.3em;
+}
+
+/* mobile display */
+@media screen and (max-width: 767px) {
+	.store {
+    flex-direction: column;
+    padding: 1.5em 0;
+  }
+
+  .store aside {
+    margin-bottom: 2em;
+  }
+
+  .store aside ul {
+    display: flex;
+    justify-content: center;
+    gap: 1.5em;
+  }
+
+  .items ul {
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    overflow-x: scroll;
+    padding: 0 1.5em;
+  }
 }

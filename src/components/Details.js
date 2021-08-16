@@ -45,6 +45,35 @@ const Details = (props) => {
   return (
     <div className='details'>
       <section>
+        {/* header for mobile display only */}
+        <header className="mobile">
+          <h2>{release.original_title || release.name}</h2>
+          <p className="info">
+            <span>
+              {release.genres
+                ? release.genres.map((genre, index) => {
+                    if (index > 0) return ', ' + genre.name;
+                    return genre.name
+                  })
+                : null
+              }
+            </span>
+            <span>{` | ${release.runtime || release.episode_run_time} min`}</span>
+            <span> 
+              {release.release_date
+                ? ` | ${format(parseISO(release.release_date), 'd MMMM yyyy')}`
+                : null
+              }
+              {release.first_air_date
+                ? ` | ${format(parseISO(release.first_air_date), 'yyyy')} - ${format(parseISO(release.last_air_date), 'yyyy')}`
+                : null
+              }
+            </span>
+            <span> | {release.vote_average} / 10</span>
+          </p>
+          
+        </header>
+
         {release.poster_path
           ? <Cover 
               path={release.poster_path} 
@@ -52,8 +81,9 @@ const Details = (props) => {
             />
           : null
         }
+
         <article>
-          <header>
+          <header className="regular-display">
             <h2>{release.original_title || release.name}</h2>
             <p className="info">
               <span>
