@@ -8,4 +8,4 @@ This project is from The Odin Project's Full Stack Javascript curriculum.
 
 [Live App](https://romainyvernes.github.io/shopping_cart/)
 
-![BluRay Shop](https://user-images.githubusercontent.com/65140547/128111201-0fd10aef-7ed9-46c5-95e4-0bb4c5a125d2.png)
+![BluRay Shop](https://user-images.githubusercontent.com/65140547/145941733-3ea9e161-6e82-4ed1-a02b-31fcd655d31a.png)
