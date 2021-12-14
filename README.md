@@ -1,6 +1,6 @@
 ## Shopping Cart
 ### Description
-Browse through the catalog of an online blu-ray store and buy your favorite movies and TV shows.
+React-based app that emphasizes the use of reusable components in UI conceptualization and uses React Router DOM for multi-page navigation.
 ### Instructions
 View the store's collection of either movies or TV shows and click on the poster of the title you wish to purchase. Each individual title includes an "add to cart" button with the ability to add as many as ten copies per title. Once you've made your selection, go to your cart to review your choices before checking out.
 ### About
